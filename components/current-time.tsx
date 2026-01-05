@@ -224,7 +224,7 @@ export function CurrentTime() {
             </div>
 
             <div
-                className="flex items-baseline justify-center text-[12rem] md:text-[20rem] leading-none font-light tabular-nums tracking-tighter text-foreground drop-shadow-sm font-sans font-medium text-accent select-none" style={{ marginTop: "0rem" }}
+                className="flex items-baseline justify-center text-[5rem] sm:text-[8rem] md:text-[14rem] lg:text-[18rem] xl:text-[20rem] leading-none font-light tabular-nums tracking-tighter text-foreground drop-shadow-sm font-sans font-medium text-accent select-none transition-all duration-300" style={{ marginTop: "0rem" }}
             >
                 {(() => {
                     // Display sourceDate in LOCAL time
@@ -240,15 +240,15 @@ export function CurrentTime() {
                     return (
                         <>
                             {timeString}
-                            {period && <span className="text-4xl md:text-6xl font-light text-accent ml-4 translate-y-[-2rem]" style={{ letterSpacing: "0" }}>{period}</span>}
+                            {period && <span className="text-2xl sm:text-4xl md:text-6xl font-light text-accent ml-2 sm:ml-4 -translate-y-4 sm:-translate-y-8 md:translate-y-[-2rem]" style={{ letterSpacing: "0" }}>{period}</span>}
                         </>
                     );
                 })()}
             </div>
 
 
-            <div className="flex items-center gap-6 w-full justify-between">
-                <div className="flex items-center gap-1 w-20">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-6 w-full justify-between mt-4 md:mt-0">
+                <div className="flex items-center gap-1 w-full md:w-20 justify-center md:justify-start">
                     {/* Live Button */}
                     <button
                         onClick={() => setIsLive(!isLive)}
@@ -260,11 +260,11 @@ export function CurrentTime() {
                     </button>
                 </div>
 
-                <div className="flex flex-col items-center gap-0">
-                    <div className="text-base font-bold text-accent uppercase tracking-widest">
+                <div className="flex flex-col items-center gap-1 text-center">
+                    <div className="text-sm md:text-base font-bold text-accent uppercase tracking-widest">
                         {Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, " ")}
                     </div>
-                    <div className="text-sm text-accent uppercase font-medium">
+                    <div className="text-xs md:text-sm text-accent uppercase font-medium">
                         {sourceDate.toLocaleDateString(undefined, {
                             weekday: "long",
                             year: "numeric",
@@ -274,7 +274,7 @@ export function CurrentTime() {
                     </div>
                 </div>
 
-                <div className="relative flex items-center p-0.5 bg-white rounded-full border border-border">
+                <div className="relative flex items-center p-0.5 bg-white rounded-full border border-border w-full md:w-auto justify-center md:justify-start">
                     {/* Sliding Pill */}
                     <div
                         className={`absolute top-1 bottom-1 w-[calc(50%-4px)] bg-primary rounded-full transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-sm ${is24Hour ? "left-[calc(50%+2px)]" : "left-1"
@@ -283,14 +283,14 @@ export function CurrentTime() {
 
                     <button
                         onClick={() => setIs24Hour(false)}
-                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-15 ${!is24Hour ? "text-background" : "text-accent hover:text-background"
+                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-1/2 md:w-15 text-center ${!is24Hour ? "text-background" : "text-accent hover:text-background"
                             }`}
                     >
                         12H
                     </button>
                     <button
                         onClick={() => setIs24Hour(true)}
-                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-15 ${is24Hour ? "text-background" : "text-accent hover:text-background"
+                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-1/2 md:w-15 text-center ${is24Hour ? "text-background" : "text-accent hover:text-background"
                             }`}
                     >
                         24H
