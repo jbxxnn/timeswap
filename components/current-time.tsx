@@ -188,7 +188,7 @@ export function CurrentTime() {
                     className="text-primary font-bold"
                 />
 
-                <span>in</span>
+                <span className="text-accent-foreground">in</span>
 
                 <SearchableSelect
                     value={sourceTimezone}
