@@ -224,7 +224,7 @@ export function CurrentTime() {
             </div>
 
             <div
-                className="flex items-baseline justify-center text-[5rem] sm:text-[8rem] md:text-[14rem] lg:text-[18rem] xl:text-[20rem] leading-none font-light tabular-nums tracking-tighter text-foreground drop-shadow-sm font-sans font-medium text-accent select-none transition-all duration-300" style={{ marginTop: "0rem" }}
+                className="flex items-baseline justify-center text-[6rem] md:text-[14rem] lg:text-[18rem] xl:text-[20rem] leading-none font-light tabular-nums tracking-tighter text-foreground drop-shadow-sm font-sans font-medium text-accent select-none transition-all duration-300" style={{ marginTop: "0rem" }}
             >
                 {(() => {
                     // Display sourceDate in LOCAL time
