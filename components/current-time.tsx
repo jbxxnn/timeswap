@@ -179,7 +179,7 @@ export function CurrentTime() {
         <div className="flex flex-col items-center justify-center space-y-8 w-full">
 
             <div className="flex flex-wrap items-center justify-center gap-2 text-accent mb-2 text-lg font-semibold tracking-widest uppercase text-center w-full max-w-4xl leading-relaxed">
-                <span className="text-foreground">When it is</span>
+                <span className="text-accent-foreground">When it is</span>
                 <SearchableSelect
                     value={sourceTimeValue}
                     onChange={handleTimeSelectChange}
@@ -220,7 +220,7 @@ export function CurrentTime() {
                     className="text-primary font-bold max-w-[200px] md:max-w-none truncate align-bottom"
                 />
 
-                <span>, my local time is</span>
+                <span className="text-accent-foreground">, my local time is</span>
             </div>
 
             <div
@@ -240,7 +240,7 @@ export function CurrentTime() {
                     return (
                         <>
                             {timeString}
-                            {period && <span className="text-2xl sm:text-4xl md:text-6xl font-light text-accent ml-2 sm:ml-4 -translate-y-4 sm:-translate-y-8 md:translate-y-[-2rem]" style={{ letterSpacing: "0" }}>{period}</span>}
+                            {period && <span className="text-2xl sm:text-4xl md:text-6xl font-light text-accent-foreground ml-2 sm:ml-4 -translate-y-4 sm:-translate-y-8 md:translate-y-[-2rem]" style={{ letterSpacing: "0" }}>{period}</span>}
                         </>
                     );
                 })()}
@@ -261,10 +261,10 @@ export function CurrentTime() {
                 </div>
 
                 <div className="flex flex-col items-center gap-1 text-center">
-                    <div className="text-sm md:text-base font-bold text-accent uppercase tracking-widest">
+                    <div className="text-sm md:text-base font-bold text-accent-foreground uppercase tracking-widest">
                         {Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, " ")}
                     </div>
-                    <div className="text-xs md:text-sm text-accent uppercase font-medium">
+                    <div className="text-xs md:text-sm text-accent-foreground uppercase font-medium">
                         {sourceDate.toLocaleDateString(undefined, {
                             weekday: "long",
                             year: "numeric",
@@ -283,14 +283,14 @@ export function CurrentTime() {
 
                     <button
                         onClick={() => setIs24Hour(false)}
-                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-1/2 md:w-15 text-center ${!is24Hour ? "text-background" : "text-accent hover:text-background"
+                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-1/2 md:w-15 text-center ${!is24Hour ? "text-accent-foreground" : "text-accent-foreground hover:text-background"
                             }`}
                     >
                         12H
                     </button>
                     <button
                         onClick={() => setIs24Hour(true)}
-                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-1/2 md:w-15 text-center ${is24Hour ? "text-background" : "text-accent hover:text-background"
+                        className={`relative z-10 py-2 px-4 rounded-full text-sm font-medium transition-colors duration-300 w-1/2 md:w-15 text-center ${is24Hour ? "text-accent-foreground" : "text-accent-foreground hover:text-background"
                             }`}
                     >
                         24H
