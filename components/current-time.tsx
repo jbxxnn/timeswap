@@ -179,7 +179,7 @@ export function CurrentTime() {
         <div className="flex flex-col items-center justify-center space-y-8 w-full">
 
             <div className="flex flex-wrap items-center justify-center gap-2 text-accent mb-2 text-lg font-semibold tracking-widest uppercase text-center w-full max-w-4xl leading-relaxed">
-                <span>When it is</span>
+                <span className="text-accent">When it is</span>
                 <SearchableSelect
                     value={sourceTimeValue}
                     onChange={handleTimeSelectChange}
